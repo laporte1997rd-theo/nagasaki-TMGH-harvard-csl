@@ -12,8 +12,8 @@
     </author>
     <category citation-format="author-date"/>
     <category field="generic-base"/>
-    <summary>Nagasaki University master's thesis custom style, based on Cite Them Right 12th edition (Harvard). Only the in-text citation author-suppression rule is changed (et al. from 3+ authors, et-al-use-first 1); the reference list formatting is identical to the original Cite Them Right 12th edition Harvard style.</summary>
-    <updated>2026-07-31T00:00:00+00:00</updated>
+    <summary>Nagasaki University master's thesis custom style, based on Cite Them Right 12th edition (Harvard). In-text citations: et al. from 3+ authors (et-al-use-first 1), "&amp;" instead of "and" between two authors, and "n.d." for missing dates. The reference list formatting (author count, order, initials, year position, title case, italics, volume/issue/page, DOI, URL, accessed date, punctuation, indentation, sort order) is identical to the original Cite Them Right 12th edition Harvard style, except that missing-date items also show "n.d." there (shared macro with in-text).</summary>
+    <updated>2026-08-02T00:00:00+00:00</updated>
     <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
   </info>
   <locale xml:lang="en-GB">
@@ -83,7 +83,7 @@
   </macro>
   <macro name="author-short">
     <names variable="author">
-      <name form="short" and="text" delimiter=", " delimiter-precedes-last="never" initialize-with=". "/>
+      <name form="short" and="symbol" delimiter=", " delimiter-precedes-last="never" initialize-with=". "/>
       <et-al font-style="italic"/>
       <substitute>
         <names variable="editor"/>
@@ -200,7 +200,7 @@
         <text variable="year-suffix"/>
       </if>
       <else>
-        <text term="no date"/>
+        <text term="no date" form="short"/>
         <text variable="year-suffix" prefix=" "/>
       </else>
     </choose>
